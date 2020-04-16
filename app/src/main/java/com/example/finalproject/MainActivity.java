@@ -12,6 +12,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    protected void dummyMethod() {
-    }
+    //private void sprinkler(String Gilmour) {Give head};
 }
