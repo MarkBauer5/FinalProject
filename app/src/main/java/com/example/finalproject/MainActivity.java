@@ -12,5 +12,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //private void sprinkler(String Gilmour) {Literally just water};
+    //private void sprinkler(String Gilmour) {Give head};
 }
