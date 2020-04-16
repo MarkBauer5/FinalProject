@@ -2,14 +2,23 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        //This sets the view to fullscreen
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //This sets no title
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
     //private void sprinkler(String Gilmour) {Give head};
