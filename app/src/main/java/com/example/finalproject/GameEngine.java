@@ -23,14 +23,6 @@ public final class GameEngine {
     public boolean finished=false;
 
 
-//    public static GameEngine getInstance(int rows, int columns) {
-//        if (instance == null) {
-//            instance = new GameEngine(rows, columns);
-//        }
-//        instance.flushBoard();
-//        return instance;
-//    }
-
     public GameEngine(int rows, int columns){
         board = new int[rows][columns];
         //board = {}
