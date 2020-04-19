@@ -6,12 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-//import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends Activity {
-
-    //Define the button
-    //Button btn_Game;
 
     /**
      * Sets up the app
@@ -26,7 +21,6 @@ public class MainActivity extends Activity {
 
         configureNextButton();
     }
-
 
     private void configureNextButton() {
         Button start_btn = findViewById(R.id.start_btn);

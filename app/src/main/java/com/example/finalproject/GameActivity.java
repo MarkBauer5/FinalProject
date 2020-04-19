@@ -1,7 +1,6 @@
 package com.example.finalproject;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,32 +15,29 @@ public class GameActivity extends Activity implements View.OnClickListener  {
 
 
     TextView txt_Turn;
-    Button btn_Test;
+    //Button btn_Test;
     Button btn_Undo;
     Button btn_Restart;
     private int rows = 6 ;
     private int columns =  7;
     private GameEngine gE;
-    private int buttons[] = {R.drawable.red_t, R.drawable.green_t};
+    private int buttons[] = {R.drawable.red_chip, R.drawable.green_chip};
     private String[] s_Turns = {"Red", "Green"};
-    private int win_buttons[] = { R.drawable.red_wint,R.drawable.green_wint};
-    private int temp_buttons[] ={ R.drawable.empty_t,R.drawable.green_t, R.drawable.red_t};
+    private int win_buttons[] = { R.drawable.red_win,R.drawable.green_win};
+    private int temp_buttons[] ={ R.drawable.empty_t,R.drawable.green_chip, R.drawable.red_chip};
 
     GridView gridview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);// Mis see teeb
-        Intent intent = this.getIntent();
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        txt_Turn = (TextView) findViewById(R.id.txt_Turn);
-        btn_Test = (Button)findViewById(R.id.btn_Test);
-        btn_Undo = (Button) findViewById(R.id.btn_Undo);
-        btn_Restart = (Button) findViewById(R.id.btn_Restart);
-        // Register the Login button to click listener
-        // Whenever the button is clicked, onClick is called
-        btn_Test.setOnClickListener(this);
-        btn_Test.setVisibility(View.GONE);
+        txt_Turn = findViewById(R.id.txt_Turn);
+        //btn_Test = findViewById(R.id.btn_Test);
+        btn_Undo = findViewById(R.id.btn_Undo);
+        btn_Restart = findViewById(R.id.btn_Restart);
+//        btn_Test.setOnClickListener(this);
+//        btn_Test.setVisibility(View.GONE);
         btn_Undo.setOnClickListener(this);
         btn_Restart.setOnClickListener(this);
 
@@ -95,10 +91,10 @@ public class GameActivity extends Activity implements View.OnClickListener  {
     @Override
     public void onClick(View v) {
 
-        if(v.getId()== R.id.btn_Test){
-            placeButtons();
-        }
-        else if(v.getId()== R.id.btn_Undo){
+//        if(v.getId()== R.id.btn_Test){
+//            placeButtons();
+//        }
+        if(v.getId()== R.id.btn_Undo){
             btn_Undo.setEnabled(true);
             unDo();
         }
