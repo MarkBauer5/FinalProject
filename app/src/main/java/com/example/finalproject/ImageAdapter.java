@@ -6,16 +6,20 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+/**
+ * Created by UDU on 02.11.2016.
+ */
+
 public class ImageAdapter extends BaseAdapter {
-    private Context context;
-    private int numTiles;
-    public ImageAdapter(Context c, int numTiles) {
-        context = c;
-        this.numTiles = numTiles;
+    private Context mContext;
+    private int nrTiles;
+    public ImageAdapter(Context c, int nrOfTiles) {
+        mContext = c;
+        this.nrTiles = nrOfTiles;
     }
 
     public int getCount() {
-        return numTiles;
+        return nrTiles;
     }
     public Object getItem(int position) {
         return null;
@@ -30,7 +34,7 @@ public class ImageAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
-            imageView = new ImageView(context);
+            imageView = new ImageView(mContext);
             imageView.setLayoutParams(new GridView.LayoutParams(95, 95));
 
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -42,6 +46,9 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setImageResource(R.drawable.empty_t);
         return imageView;
     }
+
+
+
 
 
 }

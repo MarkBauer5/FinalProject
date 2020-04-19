@@ -1,17 +1,17 @@
 package com.example.finalproject;
 
-//import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
-//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity implements View.OnClickListener{
+//import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends Activity {
 
     //Define the button
-    Button btn_Game;
+    //Button btn_Game;
 
     /**
      * Sets up the app
@@ -24,21 +24,17 @@ public class MainActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_Game = findViewById(R.id.start_btn);
-
-        // sets the on click listener for the button, calls onClick
-        btn_Game.setOnClickListener(this);
-
-
+        configureNextButton();
     }
 
-    @Override
-    public void onClick(View v) {
 
-        if(v.getId()== R.id.start_btn){
-            Intent intent = new Intent(this, GameActivity.class);
-            intent.putExtra("Start", true);
-            startActivity(intent);
-        }
+    private void configureNextButton() {
+        Button start_btn = findViewById(R.id.start_btn);
+        start_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GameActivity.class));
+            }
+        });
     }
 }
