@@ -57,6 +57,8 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                     txt_Turn.setText(s_Turns[(gameEngine.getCount()+1)%2]);
                     if(addPosition<rows*columns){
                         ImageView chosen =  (ImageView) parent.getChildAt(addPosition);
+                        chosen.setTranslationY(2000);
+                        chosen.animate().translationYBy(-2000).rotation(-1000).setDuration(800);
                         chosen.setImageResource(buttons[getTurn()]);
                         if(gameEngine.finished){
                             if(!gameEngine.win.isEmpty())
@@ -117,23 +119,23 @@ public class GameActivity extends Activity implements View.OnClickListener  {
     }
 
 
-    public void placeButtons(){
-        //int[][]b=  { { 0, 0, 0, 1, 1, 2, 1, },{ 0, 0, 0, 0, 2, 2, 2, },{ 0, 0, 0, 0, 1, 1, 1, },{ 0, 0, 0, 0, 0, 2, 1, },{ 0, 0, 0, 0, 0, 0, 2, },{ 0, 0, 0, 0, 0, 0, 1}};
-        //int [][]b = { { 1, 2, 1, 1, 1, 0, 0, },{ 0, 1, 2, 2, 2, 0, 0, },{ 0, 0, 0, 2, 1, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0}};
-        int[][]b= { { 2, 1, 2, 1, 2, 1, 1, },{ 1, 1, 1, 2, 1, 1, 1, },{ 2, 1, 2, 1, 1, 1, 1, },{ 1, 1, 1, 1, 1, 1, 1 },{ 1, 1,1, 1, 1, 1, 1 },{ 1, 1, 1, 1, 1, 1, 0}};
-        gameEngine.setBoard(b,0);
-        for(int i = 0; i<rows;i++){
-            for(int j = 0; j<columns; j++){
-                //System.out.print(gE.getPosition(i,j));
-                ImageView temp = (ImageView) gridview.getChildAt(gameEngine.getPosition(i,j));
-                temp.setImageResource(temp_buttons[b[i][j]]);
-                //temp.setImageResource(R.drawable.red_wint);
-
-            }
-            System.out.println("");
-        }
-
-    }
+//    public void placeButtons(){
+//        //int[][]b=  { { 0, 0, 0, 1, 1, 2, 1, },{ 0, 0, 0, 0, 2, 2, 2, },{ 0, 0, 0, 0, 1, 1, 1, },{ 0, 0, 0, 0, 0, 2, 1, },{ 0, 0, 0, 0, 0, 0, 2, },{ 0, 0, 0, 0, 0, 0, 1}};
+//        //int [][]b = { { 1, 2, 1, 1, 1, 0, 0, },{ 0, 1, 2, 2, 2, 0, 0, },{ 0, 0, 0, 2, 1, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0}};
+//        int[][]b= { { 2, 1, 2, 1, 2, 1, 1, },{ 1, 1, 1, 2, 1, 1, 1, },{ 2, 1, 2, 1, 1, 1, 1, },{ 1, 1, 1, 1, 1, 1, 1 },{ 1, 1,1, 1, 1, 1, 1 },{ 1, 1, 1, 1, 1, 1, 0}};
+//        gameEngine.setBoard(b,0);
+//        for(int i = 0; i<rows;i++){
+//            for(int j = 0; j<columns; j++){
+//                //System.out.print(gE.getPosition(i,j));
+//                ImageView temp = (ImageView) gridview.getChildAt(gameEngine.getPosition(i,j));
+//                temp.setImageResource(temp_buttons[b[i][j]]);
+//                //temp.setImageResource(R.drawable.red_wint);
+//
+//            }
+//            System.out.println("");
+//        }
+//
+//    }
 
     private int getTurn(){
         return gameEngine.getCount()%2;
