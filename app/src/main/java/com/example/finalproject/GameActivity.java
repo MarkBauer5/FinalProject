@@ -43,6 +43,9 @@ public class GameActivity extends Activity implements View.OnClickListener  {
         gridview.setAdapter(new ImageAdapter(this, rows*columns));
         txt_Turn.setText(s_Turns[0]);
 
+        ImageView board = findViewById(R.id.board);
+        board.setImageResource(R.drawable.test_board);
+
 
 
         // Create GameEngine
