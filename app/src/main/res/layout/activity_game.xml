@@ -34,7 +34,8 @@
             android:text="Restart">
         </Button>
     </LinearLayout>
-    <RelativeLayout android:id="@+id/gridview_holder"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridviewHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -45,19 +46,15 @@
     <GridView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/gridview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnWidth="90dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="50dp"
-        android:horizontalSpacing="10dp"
+        android:layout_height="match_parent"
+        android:numColumns="7"
         android:stretchMode="columnWidth"
         android:gravity="center"
         android:rotation="180"/>
     <ImageView
         android:id="@+id/board"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="-130sp"/>
+        android:layout_height="match_parent"/>
     </RelativeLayout>
 
 
