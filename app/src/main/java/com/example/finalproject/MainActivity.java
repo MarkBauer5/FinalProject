@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
         start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view.startAnimation(new AlphaAnimation(1F, 0.4F));
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
             }
         });
