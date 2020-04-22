@@ -38,10 +38,10 @@ public class ImageAdapter extends BaseAdapter {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
             System.out.println("WWWWWWWWWWWWW" + txt_height);
-            GridView.LayoutParams mImageViewLayoutParams = new GridView.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            imageView.setLayoutParams(mImageViewLayoutParams);
-            //imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
+//            GridView.LayoutParams mImageViewLayoutParams = new GridView.LayoutParams(
+//                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//            imageView.setLayoutParams(mImageViewLayoutParams);
+            imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
 
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int pad = 10;
