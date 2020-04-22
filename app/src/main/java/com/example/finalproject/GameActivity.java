@@ -42,20 +42,17 @@ public class GameActivity extends Activity implements View.OnClickListener  {
 
         gridview = findViewById(R.id.gridview);
         gridview.setNumColumns(7);
-        txt_height = txt_Turn.getHeight();
-        gridview.setAdapter(new ImageAdapter(this, rows*columns));
+        gridview.setAdapter(new ImageAdapter(this, rows*columns, this));
         txt_Turn.setText(s_Turns[0]);
 
         ImageView board = findViewById(R.id.board);
         board.setImageResource(R.drawable.test_board);
 
-        System.out.println(board.getHeight() + "AAAAAAAAAAAAAAAAAAAAAAA");
         // Create GameEngine
-        gameEngine = new GameEngine(rows,columns);
+        gameEngine = new GameEngine(rows,columns, this);
         gridview.setOnItemClickListener( new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-
                 if(!gameEngine.finished){
 
                     int addPosition = gameEngine.addToColumn(position);

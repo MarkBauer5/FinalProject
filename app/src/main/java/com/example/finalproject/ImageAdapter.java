@@ -6,8 +6,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import static com.example.finalproject.GameActivity.txt_height;
-
 /**
  * Created by UDU on 02.11.2016.
  */
@@ -15,9 +13,11 @@ import static com.example.finalproject.GameActivity.txt_height;
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private int nrTiles;
-    public ImageAdapter(Context c, int nrOfTiles) {
+    private GameActivity gameActivity;
+    public ImageAdapter(Context c, int nrOfTiles, GameActivity setGameActivity) {
         mContext = c;
         this.nrTiles = nrOfTiles;
+        gameActivity = setGameActivity;
     }
 
     public int getCount() {
@@ -37,11 +37,13 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
-            System.out.println("WWWWWWWWWWWWW" + txt_height);
 //            GridView.LayoutParams mImageViewLayoutParams = new GridView.LayoutParams(
 //                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 //            imageView.setLayoutParams(mImageViewLayoutParams);
-            imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
+            System.out.println("URFKSHKUHWUIHUIF" + gameActivity.gridview.getHeight());
+            //gameActivity.gridview.setVerticalSpacing(gameActivity.gridview.getHeight()/6);
+            imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridview.getWidth()/7,
+                    gameActivity.gridview.getHeight()/6));
 
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int pad = 10;

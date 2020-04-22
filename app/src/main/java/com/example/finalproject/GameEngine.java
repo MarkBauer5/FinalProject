@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public final class GameEngine {
 
     private int[][] board;
-    private int columns ;
+    private int columns;
     private int rows;
     private int count=-1;
     private int[] addPos;
@@ -19,17 +19,19 @@ public final class GameEngine {
     private int errorNum = 99999;
     public int[] gameEnd;
     public ArrayList<Integer> win;
+    public GameActivity gameActivity;
 
     public boolean finished=false;
 
 
-    public GameEngine(int rows, int columns){
+    public GameEngine(int rows, int columns, GameActivity setGameActivity){
         board = new int[rows][columns];
         this.columns = columns;
         this.rows = rows;
         addPos = new int[rows*columns];
         al_addPos = new ArrayList<Integer>();
         win = new ArrayList<Integer>();
+        gameActivity = setGameActivity;
     };
 
     public void restart(){
@@ -53,6 +55,7 @@ public final class GameEngine {
     }
 
     public int addToColumn(int position){
+        System.out.println("AAAAAAAAAAAAAAAA" + gameActivity.txt_Turn.getHeight());
         int column = getColumn(position);
         for(int i = 0; i<rows; i++){
             if(board[i][column] == 0){
