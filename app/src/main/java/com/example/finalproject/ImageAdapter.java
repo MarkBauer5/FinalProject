@@ -44,6 +44,8 @@ public class ImageAdapter extends BaseAdapter {
             //gameActivity.gridview.setVerticalSpacing(gameActivity.gridview.getHeight()/6);
             imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridview.getWidth()/7,
                     gameActivity.gridview.getHeight()/6));
+//            gameActivity.theBoard.setLayoutParams(new GridView.LayoutParams(gameActivity.gridview.getWidth(),
+//                    gameActivity.gridview.getHeight()));
 
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int pad = 10;

@@ -18,6 +18,7 @@ public class GameActivity extends Activity implements View.OnClickListener  {
     TextView txt_Turn;
     Button btn_Undo;
     Button btn_Restart;
+    ImageView theBoard;
     private int rows = 6 ;
     private int columns =  7;
     private GameEngine gameEngine;
@@ -38,7 +39,7 @@ public class GameActivity extends Activity implements View.OnClickListener  {
         btn_Restart = findViewById(R.id.btn_Restart);
         btn_Undo.setOnClickListener(this);
         btn_Restart.setOnClickListener(this);
-
+        theBoard = findViewById(R.id.board);
 
         gridview = findViewById(R.id.gridview);
         gridview.setNumColumns(7);
