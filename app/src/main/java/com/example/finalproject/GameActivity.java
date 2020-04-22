@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,8 @@ public class GameActivity extends Activity implements View.OnClickListener  {
     private int buttons[] = {R.drawable.red_chip, R.drawable.green_chip};
     private String[] s_Turns = {"Red's Turn", "Green's Turn"};
     private int win_buttons[] = { R.drawable.red_win,R.drawable.green_win};
-    private int temp_buttons[] ={ R.drawable.empty_t,R.drawable.green_chip, R.drawable.red_chip};
+    //private int temp_buttons[] ={ R.drawable.empty_t,R.drawable.green_chip, R.drawable.red_chip};
+    public static int txt_height;
 
     GridView gridview;
     @Override
@@ -40,6 +42,7 @@ public class GameActivity extends Activity implements View.OnClickListener  {
 
         gridview = findViewById(R.id.gridview);
         gridview.setNumColumns(7);
+        txt_height = txt_Turn.getHeight();
         gridview.setAdapter(new ImageAdapter(this, rows*columns));
         txt_Turn.setText(s_Turns[0]);
 
