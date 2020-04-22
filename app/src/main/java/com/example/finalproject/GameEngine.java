@@ -25,7 +25,6 @@ public final class GameEngine {
 
     public GameEngine(int rows, int columns){
         board = new int[rows][columns];
-        //board = {}
         this.columns = columns;
         this.rows = rows;
         addPos = new int[rows*columns];

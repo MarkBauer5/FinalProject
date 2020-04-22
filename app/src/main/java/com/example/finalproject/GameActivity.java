@@ -49,8 +49,7 @@ public class GameActivity extends Activity implements View.OnClickListener  {
         ImageView board = findViewById(R.id.board);
         board.setImageResource(R.drawable.test_board);
 
-
-
+        System.out.println(board.getHeight() + "AAAAAAAAAAAAAAAAAAAAAAA");
         // Create GameEngine
         gameEngine = new GameEngine(rows,columns);
         gridview.setOnItemClickListener( new AdapterView.OnItemClickListener() {
