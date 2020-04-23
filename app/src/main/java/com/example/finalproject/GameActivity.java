@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class GameActivity extends Activity implements View.OnClickListener  {
 
 
@@ -69,8 +71,10 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                             chosen = (ImageView) parent.getChildAt(0);
                         }
                         System.out.println(position + "WWWHHHAAATTT");
+                        Random r = new Random();
+                        int rot = r.nextInt(2000 - 65) - 65;
                         chosen.setTranslationY(2000);
-                        chosen.animate().translationYBy(-2000).rotation(-1000).setDuration(800);
+                        chosen.animate().translationYBy(-2000).rotation(rot).setDuration(800);
                         chosen.setImageResource(buttons[getTurn()]);
                         if(gameEngine.finished){
                             if(!gameEngine.win.isEmpty())
