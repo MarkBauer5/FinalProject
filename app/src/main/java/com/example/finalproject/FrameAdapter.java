@@ -5,7 +5,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 /**
  * Created by UDU on 02.11.2016.
@@ -42,21 +41,19 @@ public class FrameAdapter extends BaseAdapter {
 //                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 //            imageView.setLayoutParams(mImageViewLayoutParams);
             //gameActivity.gridview.setVerticalSpacing(gameActivity.gridview.getHeight()/6);
-            imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridview.getWidth()/7,
-                    gameActivity.gridview.getHeight()/6));
+            imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridframe.getWidth()/7,
+                    gameActivity.gridframe.getHeight()/6));
 
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int pad = 10;
             imageView.setPadding(pad, pad, pad, pad);
-            imageView.setEnabled(false);
         } else {
-            imageView = (ImageView) convertView;
-            imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridview.getWidth()/7,
-                    gameActivity.gridview.getHeight()/6));
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridframe.getWidth()/7,
+                    gameActivity.gridframe.getHeight()/6));
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int pad = 10;
             imageView.setPadding(pad, pad, pad, pad);
-            imageView.setEnabled(false);
         }
         imageView.setImageResource(R.drawable.frame);
         return imageView;

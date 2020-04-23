@@ -30,7 +30,8 @@
         <activity android:name=".GameActivity" >
             <!--Default Intent Filter-->
             <intent-filter>
-                <action android:name="android.intent.action.DEFAULT" />
+                <action android:name="android.intent.action.DEFAULT"
+                    android:theme="@style/TransparentAppCompatTheme"/>
             </intent-filter>
         </activity>
     </application>

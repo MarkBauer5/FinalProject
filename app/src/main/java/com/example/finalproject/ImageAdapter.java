@@ -1,11 +1,11 @@
 package com.example.finalproject;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 /**
  * Created by UDU on 02.11.2016.
@@ -60,6 +60,7 @@ public class ImageAdapter extends BaseAdapter {
             int pad = 10;
             imageView.setPadding(pad, pad, pad, pad);
         }
+        imageView.setBackgroundColor(Color.TRANSPARENT);
         imageView.setImageResource(R.drawable.empty_t);
         return imageView;
     }
