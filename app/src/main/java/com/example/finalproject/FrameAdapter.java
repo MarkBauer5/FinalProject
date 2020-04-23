@@ -11,11 +11,11 @@ import android.widget.RelativeLayout;
  * Created by UDU on 02.11.2016.
  */
 
-public class ImageAdapter extends BaseAdapter {
+public class FrameAdapter extends BaseAdapter {
     private Context mContext;
     private int nrTiles;
     private GameActivity gameActivity;
-    public ImageAdapter(Context c, int nrOfTiles, GameActivity setGameActivity) {
+    public FrameAdapter(Context c, int nrOfTiles, GameActivity setGameActivity) {
         mContext = c;
         this.nrTiles = nrOfTiles;
         gameActivity = setGameActivity;
@@ -36,14 +36,11 @@ public class ImageAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
         if (convertView == null) {
-//            gameActivity.theBoard.setLayoutParams(new RelativeLayout.LayoutParams(gameActivity.gridviewHolder.getWidth(),
-//                    gameActivity.gridviewHolder.getHeight()));
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
 //            GridView.LayoutParams mImageViewLayoutParams = new GridView.LayoutParams(
 //                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 //            imageView.setLayoutParams(mImageViewLayoutParams);
-            System.out.println("URFKSHKUHWUIHUIF" + gameActivity.gridview.getHeight());
             //gameActivity.gridview.setVerticalSpacing(gameActivity.gridview.getHeight()/6);
             imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridview.getWidth()/7,
                     gameActivity.gridview.getHeight()/6));
@@ -51,16 +48,17 @@ public class ImageAdapter extends BaseAdapter {
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int pad = 10;
             imageView.setPadding(pad, pad, pad, pad);
+            imageView.setEnabled(false);
         } else {
-            //imageView = (ImageView) convertView;
-            imageView = new ImageView(mContext);
+            imageView = (ImageView) convertView;
             imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridview.getWidth()/7,
                     gameActivity.gridview.getHeight()/6));
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int pad = 10;
             imageView.setPadding(pad, pad, pad, pad);
+            imageView.setEnabled(false);
         }
-        imageView.setImageResource(R.drawable.empty_t);
+        imageView.setImageResource(R.drawable.frame);
         return imageView;
     }
 

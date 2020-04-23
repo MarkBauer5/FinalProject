@@ -55,12 +55,11 @@ public final class GameEngine {
     }
 
     public int addToColumn(int position){
-        System.out.println("AAAAAAAAAAAAAAAA" + gameActivity.txt_Turn.getHeight());
         int column = getColumn(position);
         for(int i = 0; i<rows; i++){
             if(board[i][column] == 0){
                 this.count++;
-                System.out.println(count);
+//                System.out.println(count);
                 board[i][column]=getTurn();
                 addPos[count] = getPosition(i,column);
                 al_addPos.add(getPosition(i,column));

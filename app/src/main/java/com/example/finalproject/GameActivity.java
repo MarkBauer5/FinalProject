@@ -19,14 +19,15 @@ public class GameActivity extends Activity implements View.OnClickListener  {
     Button btn_Undo;
     Button btn_Restart;
     ImageView theBoard;
+    GridView gridframe;
+    RelativeLayout gridviewHolder;
     private int rows = 6 ;
     private int columns =  7;
     private GameEngine gameEngine;
     private int buttons[] = {R.drawable.red_chip, R.drawable.green_chip};
     private String[] s_Turns = {"Red's Turn", "Green's Turn"};
     private int win_buttons[] = { R.drawable.red_win,R.drawable.green_win};
-    //private int temp_buttons[] ={ R.drawable.empty_t,R.drawable.green_chip, R.drawable.red_chip};
-    public static int txt_height;
+//    private int temp_buttons[] ={ R.drawable.empty_t,R.drawable.green_chip, R.drawable.red_chip};
 
     GridView gridview;
     @Override
@@ -41,13 +42,17 @@ public class GameActivity extends Activity implements View.OnClickListener  {
         btn_Restart.setOnClickListener(this);
         theBoard = findViewById(R.id.board);
 
+        gridframe = findViewById(R.id.gridframe);
         gridview = findViewById(R.id.gridview);
+        gridviewHolder = findViewById(R.id.gridviewHolder);
         gridview.setNumColumns(7);
         gridview.setAdapter(new ImageAdapter(this, rows*columns, this));
+        gridframe.setNumColumns(7);
+        gridframe.setAdapter(new FrameAdapter(this, rows*columns, this));
         txt_Turn.setText(s_Turns[0]);
 
-        ImageView board = findViewById(R.id.board);
-        board.setImageResource(R.drawable.test_board);
+//        ImageView board = findViewById(R.id.board);
+//        board.setImageResource(R.drawable.test_board);
 
         // Create GameEngine
         gameEngine = new GameEngine(rows,columns, this);
@@ -60,6 +65,10 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                     txt_Turn.setText(s_Turns[(gameEngine.getCount()+1)%2]);
                     if(addPosition<rows*columns){
                         ImageView chosen =  (ImageView) parent.getChildAt(addPosition);
+                        if (addPosition == 0) {
+                            chosen = (ImageView) parent.getChildAt(0);
+                        }
+                        System.out.println(position + "WWWHHHAAATTT");
                         chosen.setTranslationY(2000);
                         chosen.animate().translationYBy(-2000).rotation(-1000).setDuration(800);
                         chosen.setImageResource(buttons[getTurn()]);
@@ -75,10 +84,8 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                             else{
                                 Toast.makeText(GameActivity.this, "Game Over Nobody Won - You both suck ",
                                         Toast.LENGTH_SHORT).show();
-
                             }
                         }
-
                     }
                     // Toast.makeText(GameActivity.this, "" + position +" "+ gE.getRow(position) +" "+gE.getColumn(position) +" "+ gE.getRow(gE.getLastPos()) +" "+ gE.getColumn(gE.getLastPos()), Toast.LENGTH_SHORT).show();
                 }
@@ -93,6 +100,7 @@ public class GameActivity extends Activity implements View.OnClickListener  {
 //        if(v.getId()== R.id.btn_Test){
 //            placeButtons();
 //        }
+        System.out.println(gridview.getChildAt(0));
         if(v.getId()== R.id.btn_Undo){
             btn_Undo.setEnabled(true);
             unDo();
