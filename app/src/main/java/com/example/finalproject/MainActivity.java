@@ -47,5 +47,12 @@ public class MainActivity extends Activity {
                 System.exit(1);
             }
         });
+
+        about_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+            }
+        });
     }
 }
