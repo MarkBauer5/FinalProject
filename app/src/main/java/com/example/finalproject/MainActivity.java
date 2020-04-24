@@ -25,10 +25,19 @@ public class MainActivity extends Activity {
 
     private void configureNextButton() {
         Button start_btn = findViewById(R.id.start_btn);
+        Button exit_btn = findViewById(R.id.exit_btn);
         start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
+            }
+        });
+        exit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
             }
         });
     }
