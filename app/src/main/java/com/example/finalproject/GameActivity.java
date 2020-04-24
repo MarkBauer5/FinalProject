@@ -14,9 +14,6 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class GameActivity extends Activity implements View.OnClickListener  {
-
-
-
     TextView txt_Turn;
     Button btn_Undo;
     Button btn_Restart;
@@ -29,7 +26,6 @@ public class GameActivity extends Activity implements View.OnClickListener  {
     private int buttons[] = {R.drawable.red_chip, R.drawable.green_chip};
     private String[] s_Turns = {"Red's Turn", "Green's Turn"};
     private int win_buttons[] = { R.drawable.red_win,R.drawable.green_win};
-//    private int temp_buttons[] ={ R.drawable.empty_t,R.drawable.green_chip, R.drawable.red_chip};
 
     GridView gridview;
     @Override
@@ -52,9 +48,6 @@ public class GameActivity extends Activity implements View.OnClickListener  {
         gridframe.setNumColumns(7);
         gridframe.setAdapter(new FrameAdapter(this, rows*columns, this));
         txt_Turn.setText(s_Turns[0]);
-
-//        ImageView board = findViewById(R.id.board);
-//        board.setImageResource(R.drawable.test_board);
 
         // Create GameEngine
         gameEngine = new GameEngine(rows,columns, this);
@@ -91,19 +84,17 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                             }
                         }
                     }
-                    // Toast.makeText(GameActivity.this, "" + position +" "+ gE.getRow(position) +" "+gE.getColumn(position) +" "+ gE.getRow(gE.getLastPos()) +" "+ gE.getColumn(gE.getLastPos()), Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
+
+    /**
+     * Handles clicking updates.
+     * @param v View update for screen
+     */
     @Override
     public void onClick(View v) {
-
-//        if(v.getId()== R.id.btn_Test){
-//            placeButtons();
-//        }
         System.out.println(gridview.getChildAt(0));
         if(v.getId()== R.id.btn_Undo){
             btn_Undo.setEnabled(true);
@@ -117,12 +108,12 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                 ImageView l = (ImageView) gridview.getChildAt(i);
                 l.setImageResource(R.drawable.empty_t);
             }
-
         }
-
-
     }
 
+    /**
+     * Handles undo action.
+     */
     public void unDo(){
         if(gameEngine.getCount()>-1){
             int pos = gameEngine.unDo();
@@ -133,31 +124,7 @@ public class GameActivity extends Activity implements View.OnClickListener  {
 
     }
 
-
-//    public void placeButtons(){
-//        //int[][]b=  { { 0, 0, 0, 1, 1, 2, 1, },{ 0, 0, 0, 0, 2, 2, 2, },{ 0, 0, 0, 0, 1, 1, 1, },{ 0, 0, 0, 0, 0, 2, 1, },{ 0, 0, 0, 0, 0, 0, 2, },{ 0, 0, 0, 0, 0, 0, 1}};
-//        //int [][]b = { { 1, 2, 1, 1, 1, 0, 0, },{ 0, 1, 2, 2, 2, 0, 0, },{ 0, 0, 0, 2, 1, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0, },{ 0, 0, 0, 0, 0, 0, 0}};
-//        int[][]b= { { 2, 1, 2, 1, 2, 1, 1, },{ 1, 1, 1, 2, 1, 1, 1, },{ 2, 1, 2, 1, 1, 1, 1, },{ 1, 1, 1, 1, 1, 1, 1 },{ 1, 1,1, 1, 1, 1, 1 },{ 1, 1, 1, 1, 1, 1, 0}};
-//        gameEngine.setBoard(b,0);
-//        for(int i = 0; i<rows;i++){
-//            for(int j = 0; j<columns; j++){
-//                //System.out.print(gE.getPosition(i,j));
-//                ImageView temp = (ImageView) gridview.getChildAt(gameEngine.getPosition(i,j));
-//                temp.setImageResource(temp_buttons[b[i][j]]);
-//                //temp.setImageResource(R.drawable.red_wint);
-//
-//            }
-//            System.out.println("");
-//        }
-//
-//    }
-
     private int getTurn(){
         return gameEngine.getCount()%2;
     }
-
-
-
-
-
 }

@@ -2,14 +2,7 @@ package com.example.finalproject;
 
 import java.util.ArrayList;
 
-/**
- * Created by UDU on 06.11.2016.
- */
-
-//Here I reference ARRAYS from 0
-
 public final class GameEngine {
-
     private int[][] board;
     private int columns;
     private int rows;
@@ -43,9 +36,6 @@ public final class GameEngine {
         finished =false;
     }
 
-
-
-
     public int unDo(){
         int temp = al_addPos.get(count);
         board[getRow(temp)][getColumn(temp)] =0;
@@ -77,8 +67,6 @@ public final class GameEngine {
 
 
     private void checkWin(int position) {
-
-
         ArrayList<Integer> inRow = new ArrayList<Integer>();
         ArrayList<ArrayList<Integer>> array = new ArrayList<ArrayList<Integer>>();
 
@@ -187,16 +175,7 @@ public final class GameEngine {
                 }
             }
         }
-
-
-
-
-
-
-
     }
-
-
 
     public int getPosition(int row, int column){ return columns * row + column ;}
     public int getRow(int position){
@@ -211,7 +190,6 @@ public final class GameEngine {
 
 
     public void printBoard(){
-
         String s = "";
         s+="{ ";
         for(int i =0; i<rows; i++){
@@ -228,7 +206,5 @@ public final class GameEngine {
         }
         s+="}";
         System.out.println(s);
-
     }
-
 }

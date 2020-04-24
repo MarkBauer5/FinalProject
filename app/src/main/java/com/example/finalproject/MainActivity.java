@@ -23,15 +23,22 @@ public class MainActivity extends Activity {
         configureNextButton();
     }
 
+    /**
+     * Defines actions for pressing each home screen button.
+     */
     private void configureNextButton() {
         Button start_btn = findViewById(R.id.start_btn);
         Button exit_btn = findViewById(R.id.exit_btn);
+        Button about_btn = findViewById(R.id.about_btn);
+
+        //if start button is pressed, beging GameActivity
         start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
             }
         });
+        //If exit button is pressed, kill app
         exit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -7,10 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-/**
- * Created by UDU on 02.11.2016.
- */
-
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private int nrTiles;
@@ -64,9 +60,4 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setImageResource(R.drawable.empty_t);
         return imageView;
     }
-
-
-
-
-
 }
