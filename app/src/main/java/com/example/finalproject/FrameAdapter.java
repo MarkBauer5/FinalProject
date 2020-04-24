@@ -37,10 +37,6 @@ public class FrameAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
-//            GridView.LayoutParams mImageViewLayoutParams = new GridView.LayoutParams(
-//                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//            imageView.setLayoutParams(mImageViewLayoutParams);
-            //gameActivity.gridview.setVerticalSpacing(gameActivity.gridview.getHeight()/6);
             imageView.setLayoutParams(new GridView.LayoutParams(gameActivity.gridframe.getWidth()/7,
                     gameActivity.gridframe.getHeight()/6));
 
