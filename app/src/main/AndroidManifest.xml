@@ -34,6 +34,15 @@
                     android:theme="@style/TransparentAppCompatTheme" />
             </intent-filter>
         </activity>
+        <activity android:name=".OptionsActivity">
+
+            <!-- Default Intent Filter -->
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.DEFAULT"
+                    android:theme="@style/TransparentAppCompatTheme" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

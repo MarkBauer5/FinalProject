@@ -14,6 +14,8 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class GameActivity extends Activity implements View.OnClickListener  {
+    public static boolean undoEnabled = true;
+    public static boolean animationEnabled = true;
     TextView txt_Turn;
     Button btn_Undo;
     Button btn_Restart;
@@ -49,6 +51,14 @@ public class GameActivity extends Activity implements View.OnClickListener  {
         gridframe.setAdapter(new FrameAdapter(this, rows*columns, this));
         txt_Turn.setText(s_Turns[0]);
 
+        if (undoEnabled) {
+            btn_Undo.setVisibility(View.VISIBLE);
+            btn_Undo.setEnabled(true);
+        } else {
+            btn_Undo.setVisibility(View.GONE);
+            btn_Undo.setEnabled(false);
+        }
+
         // Create GameEngine
         gameEngine = new GameEngine(rows,columns, this);
         gridview.setOnItemClickListener( new AdapterView.OnItemClickListener() {
@@ -66,9 +76,13 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                         System.out.println(position + "WWWHHHAAATTT");
                         Random r = new Random();
                         int rot = r.nextInt(2000 - 65) - 65;
-                        chosen.setTranslationY(2000);
-                        chosen.animate().translationYBy(-2000).rotation(rot).setDuration(800);
-                        chosen.setImageResource(buttons[getTurn()]);
+                        if (animationEnabled) {
+                            chosen.setTranslationY(2000);
+                            chosen.animate().translationYBy(-2000).rotation(rot).setDuration(800);
+                            chosen.setImageResource(buttons[getTurn()]);
+                        } else {
+                            chosen.setImageResource(buttons[getTurn()]);
+                        }
                         if(gameEngine.finished){
                             if(!gameEngine.win.isEmpty())
                                 for(int i : gameEngine.win){

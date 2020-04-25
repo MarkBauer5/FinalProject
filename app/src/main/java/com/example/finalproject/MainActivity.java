@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
         Button start_btn = findViewById(R.id.start_btn);
         Button exit_btn = findViewById(R.id.exit_btn);
         Button about_btn = findViewById(R.id.about_btn);
+        Button options_btn = findViewById(R.id.options_btn);
 
         //if start button is pressed, beging GameActivity
         start_btn.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +52,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+            }
+        });
+
+        options_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, OptionsActivity.class));
             }
         });
     }
