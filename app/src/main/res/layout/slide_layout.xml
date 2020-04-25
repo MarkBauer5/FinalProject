@@ -23,11 +23,13 @@
 
     <TextView
         android:id="@+id/slide_desc"
-        android:textColor="@color/transparentWhite"
+        android:textColor="@color/colorWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:paddingTop="500dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="400dp"
         android:textSize="24sp"
         android:lineSpacingExtra="10dp"
         android:text="Description" />

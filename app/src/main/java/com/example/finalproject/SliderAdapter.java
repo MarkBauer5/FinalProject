@@ -38,9 +38,9 @@ public class SliderAdapter extends PagerAdapter {
     };
 
     public String[] slideDescriptions = {
-            "Test1",
-            "Test2",
-            "Test3"
+            "This app is our Final Project for CS125. We both really like Connect 4, so it was only natural for us to implement it.",
+            "Sup everyone. I'm Mark Bauer, an Industrial Engineer from New Jersey. I miss campus.",
+            "Hey all, my name is Arden Xu. I was born in Colorado, and I'm a first year Aerospace Engineer at the University of Illinois."
     };
 
     @Override
