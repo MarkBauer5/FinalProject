@@ -88,8 +88,13 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                                 for(int i : gameEngine.win){
                                     chosen = (ImageView) parent.getChildAt(i);
                                     chosen.setImageResource(win_buttons[getTurn()]);
-                                    Toast.makeText(GameActivity.this, "Game Over  "+ s_Turns[getTurn()] + " Won",
-                                            Toast.LENGTH_SHORT).show();
+                                    if (s_Turns[getTurn()].equals("Red's Turn")) {
+                                        Toast.makeText(GameActivity.this, "Game Over! Red Won!",
+                                                Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(GameActivity.this, "Game Over! Green Won!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                     btn_Undo.setEnabled(false);
                                 }
                             else{
