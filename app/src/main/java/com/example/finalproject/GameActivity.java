@@ -98,7 +98,7 @@ public class GameActivity extends Activity implements View.OnClickListener  {
                                     btn_Undo.setEnabled(false);
                                 }
                             else{
-                                Toast.makeText(GameActivity.this, "Game Over Nobody Won - You both suck ",
+                                Toast.makeText(GameActivity.this, "Game Over! Nobody Won - You both suck ",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }
