@@ -1,3 +1,5 @@
+//https://github.com/rahulmmohan/Connect4_Android
+//Credit to Rahulmmohan for helping us
 package com.example.finalproject;
 
 import android.app.Activity;
