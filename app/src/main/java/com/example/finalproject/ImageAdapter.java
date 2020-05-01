@@ -28,13 +28,11 @@ public class ImageAdapter extends BaseAdapter {
         return 0;
     }
 
-    // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
         if (convertView == null) {
 //            gameActivity.theBoard.setLayoutParams(new RelativeLayout.LayoutParams(gameActivity.gridviewHolder.getWidth(),
 //                    gameActivity.gridviewHolder.getHeight()));
-            // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
 //            GridView.LayoutParams mImageViewLayoutParams = new GridView.LayoutParams(
 //                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
